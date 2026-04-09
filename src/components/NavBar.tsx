@@ -50,25 +50,11 @@ export default function NavBar() {
       transition={{ duration: 0.25, ease: "easeInOut" }}
     >
       <div
-        style={{
-          maxWidth: "800px",
-          margin: "0 auto",
-          padding: "0 1.5rem",
-          height: "56px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+        className="mx-auto flex h-14 w-full max-w-[860px] items-center justify-between px-4 sm:px-6"
       >
         {/* Wordmark */}
         <span
-          style={{
-            fontSize: "13px",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "var(--color-text-primary)",
-            fontWeight: 400,
-          }}
+          className="truncate text-[11px] font-normal uppercase tracking-[0.1em] text-[var(--color-text-primary)] sm:text-[13px] sm:tracking-[0.12em]"
         >
           Dídac Torres
         </span>
@@ -76,13 +62,7 @@ export default function NavBar() {
         {/* Nav links */}
         <nav aria-label="Primary navigation">
           <ul
-            style={{
-              listStyle: "none",
-              display: "flex",
-              gap: "2rem",
-              margin: 0,
-              padding: 0,
-            }}
+            className="m-0 flex list-none gap-4 p-0 sm:gap-8"
           >
             {(
               [
@@ -93,21 +73,7 @@ export default function NavBar() {
               <li key={href}>
                 <a
                   href={href}
-                  style={{
-                    fontSize: "12px",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "var(--color-text-muted)",
-                    transition: "color 200ms ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.color =
-                      "var(--color-text-primary)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.color =
-                      "var(--color-text-muted)";
-                  }}
+                  className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-text-muted)] transition-colors duration-200 hover:text-[var(--color-text-primary)] sm:text-xs sm:tracking-[0.1em]"
                 >
                   {label}
                 </a>

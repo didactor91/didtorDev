@@ -129,6 +129,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 color: "var(--color-text-primary)",
                 textDecoration: "underline",
                 textUnderlineOffset: "3px",
+                overflowWrap: "anywhere",
               }}
             >
               {project.liveLabel ?? "Live"}
