@@ -18,7 +18,6 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^6.1.5",
     "framer-motion": "^12.38.0",
-    "lucide-react": "^1.7.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2"

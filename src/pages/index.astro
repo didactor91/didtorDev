@@ -45,8 +45,26 @@ import FlashlightCursor from "../components/FlashlightCursor";
   </main>
 
   <footer aria-label="Site footer" class="px-6 py-12 flex justify-center">
-    <p class="text-xs tracking-widest uppercase text-[var(--color-text-muted)] opacity-40">
-      &copy; {new Date().getFullYear()} Dídac Torres
-    </p>
+    <div class="flex flex-col items-center gap-3 text-xs tracking-widest uppercase text-[var(--color-text-muted)] opacity-70">
+      <p>&copy; {new Date().getFullYear()} Dídac Torres</p>
+      <p class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        <a
+          href="https://github.com/didactor91"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-4 hover:text-[var(--color-text-primary)]"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/didactorres91"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-4 hover:text-[var(--color-text-primary)]"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
   </footer>
 </BaseLayout>
