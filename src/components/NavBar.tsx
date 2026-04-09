@@ -37,6 +37,8 @@ export default function NavBar() {
         left: 0,
         right: 0,
         zIndex: 50,
+        display: "flex",
+        justifyContent: "center",
       }}
       animate={{
         backgroundColor: scrolled ? "rgba(5, 5, 5, 0.72)" : "rgba(5, 5, 5, 0)",
@@ -51,6 +53,11 @@ export default function NavBar() {
     >
       <div
         className="mx-auto flex h-14 w-full max-w-[860px] items-center justify-between px-4 sm:px-6"
+        style={{
+          width: "100%",
+          maxWidth: "860px",
+          margin: "0 auto",
+        }}
       >
         {/* Wordmark */}
         <span
