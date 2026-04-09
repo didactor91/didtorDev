@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: "DidtorDev",
     description:
       "This site — a silent luxury digital identity built with Astro, React islands, Tailwind v4, and Framer Motion. Zero compromise on performance.",
-    url: "https://github.com/didactordev",
+    url: "https://github.com/didactor91/didtorDev",
     tags: ["astro", "react", "tailwind", "framer-motion"],
   },
   {

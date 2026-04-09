@@ -1,3 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="52">💻</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect x="12" y="14" width="40" height="28" rx="3.5" />
+  <path d="M8 48h48" />
+  <path d="M20 48c1.5 3 3.5 4 12 4s10.5-1 12-4" />
+  <style>
+    rect,
+    path {
+      stroke: #111111;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      rect,
+      path {
+        stroke: #e5e5e5;
+      }
+    }
+  </style>
 </svg>
