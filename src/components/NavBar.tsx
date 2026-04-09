@@ -39,9 +39,7 @@ export default function NavBar() {
         zIndex: 50,
       }}
       animate={{
-        backgroundColor: scrolled
-          ? "rgba(5, 5, 5, 0.72)"
-          : "rgba(5, 5, 5, 0)",
+        backgroundColor: scrolled ? "rgba(5, 5, 5, 0.72)" : "rgba(5, 5, 5, 0)",
         backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
         borderBottomColor: scrolled
           ? "rgba(255, 255, 255, 0.06)"
@@ -72,7 +70,7 @@ export default function NavBar() {
             fontWeight: 400,
           }}
         >
-          Dídac Torné
+          Dídac Torres
         </span>
 
         {/* Nav links */}

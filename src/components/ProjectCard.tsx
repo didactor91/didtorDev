@@ -26,11 +26,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileHover="hovered"
       style={{ listStyle: "none" }}
     >
-      <motion.a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`View project: ${project.title}`}
+      <motion.div
         variants={{
           hovered: { borderColor: "rgba(163, 163, 163, 1)" },
         }}
@@ -42,17 +38,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           borderTop: "1px solid rgba(255, 255, 255, 0.06)",
           paddingTop: "2rem",
           paddingBottom: "2rem",
-          textDecoration: "none",
-          color: "inherit",
         }}
       >
         {/* Title row + arrow */}
-        <div
+        <motion.a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View project: ${project.title}`}
           style={{
             display: "flex",
             alignItems: "baseline",
             justifyContent: "space-between",
             gap: "1rem",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
           <motion.h3
@@ -96,7 +96,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               strokeLinejoin="round"
             />
           </motion.svg>
-        </div>
+        </motion.a>
 
         {/* Description + tags — lift slightly on hover */}
         <motion.div
@@ -117,6 +117,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             {project.description}
           </p>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--color-text-primary)",
+                textDecoration: "underline",
+                textUnderlineOffset: "3px",
+              }}
+            >
+              {project.liveLabel ?? "Live"}
+            </a>
+          ) : null}
 
           {/* Tags */}
           <div
@@ -145,7 +162,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
         </motion.div>
-      </motion.a>
+      </motion.div>
     </motion.li>
   );
 }
