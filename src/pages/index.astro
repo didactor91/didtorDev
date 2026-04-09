@@ -1,0 +1,52 @@
+---
+// index.astro — Home page
+// Phase 3: Interactive islands wired up with correct hydration directives.
+//   NavBar          → client:load          (must respond from the first scroll)
+//   FlashlightCursor→ client:media="(hover: hover)"  (zero JS on touch devices)
+//   ProjectCard×N   → client:visible       (hydrate only when card enters viewport)
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ProjectDirectory from "../components/ProjectDirectory.astro";
+import NavBar from "../components/NavBar";
+import FlashlightCursor from "../components/FlashlightCursor";
+---
+
+<BaseLayout
+  title="Dídac Torné — Software Engineer"
+  description="Digital identity of Dídac Torné, a software engineer focused on clean architecture and modern web development."
+>
+  <!-- Skip navigation — required for Lighthouse A11y 100 / WCAG 2.4.1 -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[var(--color-text-primary)] focus:text-[var(--color-bg)] focus:text-sm focus:font-medium focus:rounded"
+  >
+    Skip to main content
+  </a>
+
+  <!--
+    NavBar: client:load — hydrates immediately so scroll listener is active
+    from the very first user interaction.
+  -->
+  <NavBar client:load />
+
+  <!--
+    FlashlightCursor: client:media="(hover: hover)" — Astro will NOT include
+    the React bundle on touch-only devices (phones/tablets). On desktop the
+    overlay tracks mousemove via direct DOM writes, never triggering re-renders.
+  -->
+  <FlashlightCursor client:media="(hover: hover)" />
+
+  <main id="main-content">
+    <HeroSection />
+    <AboutSection />
+    <ProjectDirectory />
+  </main>
+
+  <footer aria-label="Site footer" class="px-6 py-12 flex justify-center">
+    <p class="text-xs tracking-widest uppercase text-[var(--color-text-muted)] opacity-40">
+      &copy; {new Date().getFullYear()} Dídac Torné
+    </p>
+  </footer>
+</BaseLayout>

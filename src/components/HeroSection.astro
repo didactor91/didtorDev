@@ -1,0 +1,71 @@
+---
+// HeroSection.astro — Module A
+// Static: B/W portrait + minimal professional statement
+// No JS, no interactivity — pure HTML/CSS
+---
+
+<section
+  id="hero"
+  aria-label="Introduction"
+  class="relative flex min-h-dvh flex-col items-center justify-center px-6 py-24"
+>
+  <div class="flex flex-col items-center gap-10 text-center">
+    <!-- B/W Portrait -->
+    <div class="relative">
+      <img
+        src="/images/profile-bw.webp"
+        alt="Dídac Torné — Software Engineer portrait"
+        width="200"
+        height="250"
+        class="h-[200px] w-[200px] rounded-full object-cover grayscale"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Identity copy -->
+    <div class="flex flex-col gap-4">
+      <h1
+        class="text-4xl font-light tracking-tight text-[var(--color-text-primary)] sm:text-5xl md:text-6xl"
+      >
+        Dídac Torné
+      </h1>
+
+      <p
+        class="text-base font-normal tracking-widest uppercase text-[var(--color-text-muted)]"
+      >
+        Software Engineer · Architect
+      </p>
+
+      <p
+        class="mx-auto mt-2 max-w-[480px] text-base leading-relaxed text-[var(--color-text-muted)]"
+      >
+        I build systems that are easy to understand, hard to break, and a
+        pleasure to work with.
+      </p>
+    </div>
+
+    <!-- Subtle scroll cue -->
+    <div
+      aria-hidden="true"
+      class="mt-8 flex flex-col items-center gap-2 text-[var(--color-text-muted)] opacity-40"
+    >
+      <span class="text-xs tracking-widest uppercase">Scroll</span>
+      <svg
+        width="16"
+        height="24"
+        viewBox="0 0 16 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="animate-bounce"
+      >
+        <path
+          d="M8 4v16M3 15l5 5 5-5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </div>
+</section>

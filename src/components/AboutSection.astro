@@ -1,0 +1,64 @@
+---
+// AboutSection.astro — Module B
+// Static: intellectual narrative constrained to max-w-[600px]
+// No JS — pure HTML/CSS
+---
+
+<section
+  id="about"
+  aria-labelledby="about-heading"
+  class="relative px-6 py-24 flex justify-center"
+>
+  <div class="flex flex-col gap-12 w-full max-w-[600px]">
+    <!-- Section heading — h2 for correct heading hierarchy (H1 in Hero → H2 here) -->
+    <h2
+      id="about-heading"
+      class="text-xs tracking-widest uppercase text-[var(--color-text-muted)] font-normal"
+    >
+      About
+    </h2>
+
+    <!-- Narrative prose -->
+    <div class="flex flex-col gap-6 text-base leading-[1.8] text-[var(--color-text-muted)]">
+      <p>
+        I've spent over a decade learning how software really works — not just
+        how to write it, but how to architect it so that future engineers (and
+        future me) can reason about it without pain.
+      </p>
+
+      <p>
+        My work centers on <span class="text-[var(--color-text-primary)]">clean architecture</span>,
+        domain-driven thinking, and building interfaces that don't apologize for
+        existing. I care deeply about what happens after the MVP: maintenance,
+        extensibility, the human cost of complexity.
+      </p>
+
+      <p>
+        I teach because I believe most engineering problems are communication
+        problems. The gap between "it works" and "it's good" is almost always
+        conceptual, not technical. I try to close that gap — with teams, with
+        content, with open-source tools.
+      </p>
+
+      <p>
+        Currently obsessed with AI-assisted workflows, keyboard-driven
+        development environments, and making Neovim feel like a tailored suit.
+      </p>
+    </div>
+
+    <!-- Divider -->
+    <div
+      class="w-12 border-t border-[var(--color-glass-border)]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Sparse factual line -->
+    <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wider uppercase text-[var(--color-text-muted)]">
+      <span>Barcelona, Spain</span>
+      <span class="text-[var(--color-glass-border)]">·</span>
+      <span>TypeScript · Go · Lua</span>
+      <span class="text-[var(--color-glass-border)]">·</span>
+      <span>Clean / Hexagonal Architecture</span>
+    </div>
+  </div>
+</section>

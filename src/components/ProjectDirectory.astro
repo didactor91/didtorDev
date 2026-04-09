@@ -1,0 +1,40 @@
+---
+// ProjectDirectory.astro — Module C
+// Static wrapper that renders the project list.
+// Phase 3: each project is a ProjectCard React island hydrated with client:visible.
+// React is only shipped + hydrated when the card enters the viewport.
+
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
+---
+
+<section
+  id="projects"
+  aria-labelledby="projects-heading"
+  class="relative px-6 py-24 flex justify-center"
+>
+  <div class="flex flex-col gap-12 w-full max-w-[800px]">
+    <!-- Section heading — h2 for correct heading hierarchy (H1 in Hero → H2 here) -->
+    <h2
+      id="projects-heading"
+      class="text-xs tracking-widest uppercase text-[var(--color-text-muted)] font-normal"
+    >
+      Projects
+    </h2>
+
+    <!-- Project list — each card is a React island -->
+    <ul class="flex flex-col" role="list" style="padding: 0; margin: 0;">
+      {
+        projects.map((project) => (
+          <ProjectCard project={project} client:visible />
+        ))
+      }
+    </ul>
+
+    <!-- List terminator line -->
+    <div
+      class="border-t border-[var(--color-glass-border)]"
+      aria-hidden="true"
+    ></div>
+  </div>
+</section>
