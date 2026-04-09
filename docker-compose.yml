@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build: .
+    container_name: didtor_portfolio
+    restart: unless-stopped
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true
+    name: tortoise-gps_internal
